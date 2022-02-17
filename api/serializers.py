@@ -16,8 +16,9 @@ class RecipeSerializer(serializers.ModelSerializer):
             'image',
             'user',
             'view_count',
+            'date',
         )
-        read_only_fields = ('view_count',)
+        read_only_fields = ('view_count', 'date')
 
 
 class UserSerializer(serializers.ModelSerializer):
