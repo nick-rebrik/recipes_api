@@ -15,7 +15,7 @@
 3. Run in command line:<br>
   ```python manage.py makemigrations```<br>
   ```python manage.py migrate```<br>
-  ```python manage.py runserver```
-4.To load test data: 
+  ```python manage.py runserver```<br>
+4.To load test data: <br>
   ```python manage.py loaddata data.json```
 5. Visit the [homepage](http://127.0.0.1:8000/api) and start using
