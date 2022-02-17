@@ -1,5 +1,5 @@
 # Recipes service
-***Storage for uploading images.***
+***Service for publishing recipes.***
 
 ### Technologies
 
