@@ -4,8 +4,19 @@ from rest_framework import serializers
 from recipes.models import User, Recipe
 
 
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = (
+            'id',
+            'first_name',
+            'last_name',
+        )
+
+
 class RecipeSerializer(serializers.ModelSerializer):
     image = Base64ImageField()
+    user = UserSerializer()
 
     class Meta:
         model = Recipe
@@ -19,13 +30,3 @@ class RecipeSerializer(serializers.ModelSerializer):
             'date',
         )
         read_only_fields = ('view_count', 'date')
-
-
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = (
-            'id',
-            'first_name',
-            'last_name',
-        )
