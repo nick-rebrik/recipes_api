@@ -14,9 +14,26 @@ class UserSerializer(serializers.ModelSerializer):
         )
 
 
-class RecipeSerializer(serializers.ModelSerializer):
+class RecipeCreateSerializer(serializers.ModelSerializer):
     image = Base64ImageField()
-    user = UserSerializer()
+
+    class Meta:
+        model = Recipe
+        fields = (
+            'id',
+            'title',
+            'description',
+            'image',
+            'user',
+            'view_count',
+            'date',
+        )
+        read_only_fields = ('view_count', 'date')
+
+
+class RecipeReadSerializer(serializers.ModelSerializer):
+    image = Base64ImageField()
+    user = UserSerializer(read_only=True)
 
     class Meta:
         model = Recipe
